@@ -1,7 +1,7 @@
 {
   "kind": "Deployment",
   "id": "backup",
-  "image": "liferaycloud/backup:4.3.9",
+  "image": "liferaycloud/backup:4.2.2",
   "memory": 1024,
   "cpu": 2,
   "scale": 1,
@@ -30,9 +30,12 @@
   },
   "env": {
     "LCP_BACKUP_CREATE_SCHEDULE": "",
+    "LCP_BACKUP_FOLDER": "/opt/liferay/data",
     "LCP_BACKUP_RESTORE_SCHEDULE": "",
-    "LCP_GCP_DATABASE_CHARSET": "utf8mb4",
-    "LCP_GCP_DATABASE_COLLATION": "utf8mb4_unicode_ci"
+    "LCP_DATABASE_SERVICE": "database"
+  },
+  "volumes": {
+    "data": "/opt/liferay/data"
   },
   "dependencies": [
     "database",

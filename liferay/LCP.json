@@ -42,6 +42,9 @@
     "database",
     "search"
   ],
+  "volumes": {
+    "data": "/opt/liferay/data"
+  },
   "environments": {
     "infra": {
       "deploy": false
